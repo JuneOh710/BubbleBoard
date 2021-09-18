@@ -8,7 +8,7 @@ import path from 'path';
 import { Server } from 'socket.io';
 import dotenv from 'dotenv';
 
-import indexRouter from './routes/index.js';
+import indexRouter from './routes/index.routes.js';
 
 
 const app = express();
