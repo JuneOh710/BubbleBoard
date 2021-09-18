@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <%- include('./partials/headTag.ejs') %>
 
   <body>
-    <h1>
-      <%= title %>
-    </h1>
-    <p>Welcome to <%= title %>
-    </p>
+    <h1>Welcome!</h1>
+    <form action="/board/new" method="GET">
+      <input type="text" name="name" placeholder="your name">
+      <button>create new board</button>
+    </form>
 
 
   </body>
