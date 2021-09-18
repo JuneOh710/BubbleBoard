@@ -14,7 +14,6 @@ import indexRouter from './routes/index.routes.js';
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
-const __dirname = path.resolve(path.dirname(decodeURI(new URL(import.meta.url).pathname)));
 dotenv.config();
 
 io.on('connection', (socket) => {
@@ -32,6 +31,8 @@ io.on('connection', (socket) => {
   });
 });
 
+const __dirname = path.resolve(path.dirname(decodeURI(new URL(import.meta.url).pathname)));
+
 // view engine setup
 app.set('views', join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -41,6 +42,9 @@ app.use(json());
 app.use(urlencoded({ extended: false }));
 app.use('/static', express.static(path.join(__dirname, 'public')))
 
+app.use('/home', (req, res) => {
+  res.render('home.views.ejs');
+})
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
