@@ -1,14 +1,21 @@
 import createError from 'http-errors';
-import express, { json, urlencoded } from 'express';
-import { join } from 'path';
+import express from 'express';
+const { json, urlencoded } = express;
+import path from 'path';
+const { join } = path;
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import http from 'http';
-import path from 'path';
 import { Server } from 'socket.io';
 import dotenv from 'dotenv';
 
+
 import indexRouter from './routes/index.routes.js';
+
+// ml imports
+// const spawn = require("child_process").spawn;
+import spawn from 'child_process';
+const pythonProcess = spawn.spawn('python', ["path/to/script.py"]);
 
 
 const app = express();
