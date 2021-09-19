@@ -1,5 +1,5 @@
 body {
-  background-color: burlywood;
+  background-color: #fff6D6;
   margin: 0;
   padding: 0;
 }
@@ -41,7 +41,7 @@ body {
 }
 
 header {
-  height: 6rem;
+  height: 3rem;
   width: 100%;
   background-color: white;
   display: flex;
