@@ -23,22 +23,40 @@ const server = http.createServer(app);
 const io = new Server(server);
 dotenv.config();
 
-io.on('connection', (socket) => {
-  console.log('a user connected');
-  socket.broadcast.emit('hi');
 
 
+
+
+
+
+
+// websockieeeeessss
+// run when a client connects
+import { formatQuestion } from './utils/questions.js';
+import { users, addUser, getCurrentUser, removeCurrentUser } from './utils/users.js';
+
+io.on('connection', socket => {
+  socket.on('question', ({ text }) => {
+    // send this message to every user
+    console.log(text)
+    io.emit('question', formatQuestion(text))
+  })
+
+  // handle user disconnecting
   socket.on('disconnect', () => {
-    console.log('user disconnected');
-  });
+    const user = getCurrentUser(socket.id)
+    // send to everyone connected
+    removeCurrentUser(user)
+  })
+})
 
-  socket.on('chat message', (msg) => {
 
-    io.emit('chat message', msg);
-  });
-});
+
+
+
 
 import { fileURLToPath } from 'url';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 

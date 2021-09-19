@@ -11,19 +11,46 @@
 
 
                 <div id="board" class="mt-4 col-md-11">
-                    <div id="question" class="slowfade-in d-flex flex-column justify-content-center align-items-center">
-                        <div class="question-text">
-                            What is the
-                            value of
-                            pi? hhkjhlkgfldl ghfkhj jhgkjhg jlhgkjh kjhg kjhg kjhgk
+                    <div class="questions">
+                        <div id="question"
+                            class="question slowfade-in d-flex flex-column justify-content-center align-items-center">
+                            <div class="question-text">
+                                What is the
+                                value of
+                                pi?
+                            </div>
+                            <div class="row mb-2">
+
+                                <button class="col btn btn-primary">like</button>
+                                <% if (name) { %>
+                                    <button class="col btn btn-secondary">pop</button>
+                                    <% } %>
+                            </div>
                         </div>
-                        <button class="btn btn-primary mb-2">like</button>
+
                     </div>
+
                 </div>
 
                 <div class="w-100 d-flex justify-content-center mt-4">
 
-                    <button class="btn btn-primary">invite link: thisisthelinktothisboard</button>
+                    <% if (name) { %>
+
+                        <form action="">
+                            <label class="form-label" for="invite">invite link:</label>
+                            <input type="text" class="form-control" value="<%= url %> ">
+
+                        </form>
+
+
+
+                        <% } else {%>
+                            <form id="questionForm" action="/board" method="POST" class="needs-validation">
+                                <input name="questionField" id="questionField" type="text" class="fomr-control"
+                                    required>
+                                <button class="btn btn-primary">ask</button>
+                            </form>
+                            <% } %>
 
                 </div>
 

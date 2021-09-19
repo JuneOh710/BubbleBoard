@@ -4,17 +4,25 @@ const router = Router();
 
 /* GET index page. */
 router.get('/', (req, res, next) => {
+
   res.render('index.views.ejs');
 });
 
 // make new board
 router.get('/board/new', (req, res, next) => {
-  res.render('create-board.views.ejs');
+  console.log(req.query)
+  const { name } = req.query;
+  res.render('create-board.views.ejs', { name });
 })
 
 router.post('/board', (req, res, next) => {
-  const { title, duration } = req.body;
-  res.render('board.views.ejs', { title, duration });
+  res.redirect('/board')
+})
+
+router.get('/board', (req, res, next) => {
+  const { name, title, duration } = req.query;
+  const url = `/board?title=${title}&duration=${duration}`;
+  res.render('board.views.ejs', { title, duration, name, url });
 })
 
 export default router;

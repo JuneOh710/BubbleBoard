@@ -8,7 +8,7 @@
                 <div class="mb-5" id="form-container">
                     <div class="m-5">
                         <h1>Let's get started...</h1>
-                        <form action="/board" method="POST" class="needs-validation" novalidate>
+                        <form id="boardForm" action="/board" method="GET" class="needs-validation" novalidate>
                             <div class="row">
                                 <div class="col-5">
                                     <label class="form-label" for="title">Board title:</label>
@@ -21,6 +21,7 @@
                                 <div class="col-5">
                                     <input class="form-control" type="number" id="duration" name="duration" value="60"
                                         required>
+                                    <input class="form-control" type="hidden" id="name" name="name" value="<%= name %>">
                                 </div>
                             </div>
 

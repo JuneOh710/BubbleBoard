@@ -4,7 +4,7 @@ body {
   padding: 0;
 }
 
-#question {
+.question {
   position: absolute;
   text-align: center;
   vertical-align: middle;
@@ -16,7 +16,7 @@ body {
   top: 800px;
   left: 960px;
 
-  transition: all 0.5s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .question-text {
