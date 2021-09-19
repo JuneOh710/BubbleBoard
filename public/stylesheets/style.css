@@ -9,6 +9,15 @@ body {
   display: block;
   z-index: 1;
   vertical-align: middle;
+  border-radius: 50px;
+  border: solid;
+  background-color: seagreen;
+  max-width: 200px;
+ 
+}
+
+.question-text {
+  margin: 15px 15px 15px 15px;
 }
 
 #buble {
