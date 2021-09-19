@@ -6,18 +6,21 @@
 
     <body>
         <%- include('./partials/header.ejs') %>
-            <ul>
-                <li>
-                    <h1 class="greeting" contenteditable="true">Insert Title Here</h1>
-                </li>
-            </ul>
-            <button>Pop Mode</button>
-            <div id="board">
-                <div id="question" class="slowfade-in"><img id="buble" src="buble.png" alt=""> What is the value of
-                    pi?</img></div>
+            <main class="container">
 
-                <script src="board.js"></script>
-            </div>
+
+                <div id="board" class="mt-5 col-md-11">
+                    <div id="question" class="slowfade-in"><img id="buble" src="/images/buble.png" alt=""> What is the
+                        value of
+                        pi?</img></div>
+
+
+                </div>
+
+                <button class="btn btn-primary">invite link: thisisthelinktothisboard</button>
+
+            </main>
+            <%- include('./partials/scripts.ejs') %>
     </body>
 
 </html>

@@ -36,8 +36,7 @@ body {
   z-index: -7;
   border-radius: 2rem;
   background-color: white;
-  height: 48rem;
-  width: 114rem;
+  height: 75vh;
 }
 
 header {
@@ -74,7 +73,7 @@ a:hover {
   position: relative;
   justify-content: center;
   text-align: center;
-  border: 2px solid black;
+
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
   margin: auto;
