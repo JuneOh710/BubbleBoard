@@ -38,7 +38,10 @@ io.on('connection', (socket) => {
   });
 });
 
-const __dirname = path.resolve(path.dirname(decodeURI(new URL(import.meta.url).pathname)));
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 // view engine setup
 app.set('views', join(__dirname, 'views'));
