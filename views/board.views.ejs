@@ -1,34 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <link rel="stylesheet" href="styles.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 <%- include('./partials/headTag.ejs') %>
-    <header>
-        <a href="index.html"><img src="bublboardlogo.png" alt="logo" /></a>
-        <ul>
-            <li>
-                <h1 class="greeting" contenteditable="true">Insert Title Here</h1>
-            </li>
-        </ul>
-    </header>
+
 
     <body>
-        fdsalkfjl;
-        <%= title %>
-            <%= duration %>
-                <button>Pop Mode</button>
-                <div id="board">
-                    <div id="question" class="slowfade-in"><img id="buble" src="buble.png" alt=""> What is the value of
-                        pi?</img></div>
+        <%- include('./partials/header.ejs') %>
+            <ul>
+                <li>
+                    <h1 class="greeting" contenteditable="true">Insert Title Here</h1>
+                </li>
+            </ul>
+            <button>Pop Mode</button>
+            <div id="board">
+                <div id="question" class="slowfade-in"><img id="buble" src="buble.png" alt=""> What is the value of
+                    pi?</img></div>
 
-                    <script src="board.js"></script>
-                </div>
+                <script src="board.js"></script>
+            </div>
     </body>
 
 </html>

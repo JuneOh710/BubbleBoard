@@ -47,7 +47,8 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(json());
 app.use(urlencoded({ extended: false }));
-app.use('/static', express.static(path.join(__dirname, 'public')))
+app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'))
 
 app.use('/home', (req, res) => {
   res.render('home.views.ejs');
@@ -67,7 +68,7 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error.ejs');
 });
 
 const port = process.env.PORT || 4000;
