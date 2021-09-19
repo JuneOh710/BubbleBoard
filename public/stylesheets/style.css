@@ -95,3 +95,8 @@ ul {
   display: flex;
   margin: auto;
 }
+
+#form-container {
+  background-color: white;
+  border-radius: 50px;
+}
